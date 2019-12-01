@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  div.signin
+    h1(style='color: #333; font-size:2em')  Don't Have An Account
+    div.center
+        h3 SIGN UP
+        if hasErrors
+         each mess in messages
+           span.err= mess
+        form(action="/signup" method="POST")
+            div.field
+                div.label(for="email") Email
+                input(style='width:80%')( type="email" name="email" placeholder='Email')
+            div.field
+                div.label(for="password") Password
+                input(style='width:80%')(width="80%" type="password" name="password" placeholder='Password')
+            button.btn(type='submit') Sign Up
