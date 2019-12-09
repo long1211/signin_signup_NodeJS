@@ -12,7 +12,7 @@ var app = express();
 var port = process.env.Port || 8000;
 var indexRouter = require('./routes/users');
 // path database
-mongoose.connect(process.env.MONGO_URL,{useNewUrlParser:true, useUnifiedTopology: true });
+mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true, useUnifiedTopology: true });
 require('./config/passport'); //vượt qua passport để config trang đăng nhâp/đăng ký
 app.use(session({
   secret: 'adsa897adsa98bs',
