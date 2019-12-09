@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
 var app = express();
-var port = 8000;
+var port = process.env.Port || 8000;
 var indexRouter = require('./routes/users');
 // path database
 mongoose.connect(process.env.MONGO_URL,{useNewUrlParser:true, useUnifiedTopology: true });
