@@ -8,9 +8,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
-
 var app = express();
-var port = process.env.Port || 8000;
 var indexRouter = require('./routes/users');
 // path database
 mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true, useUnifiedTopology: true });
@@ -50,7 +48,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-app.listen(port,function(){
-  console.log('Server listening '+ port)
-})
+app.listen(process.env.PORT || 3000)
 module.exports = app;
