@@ -8,6 +8,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
+
 var app = express();
 var port = process.env.Port || 8000;
 var indexRouter = require('./routes/users');
